@@ -151,6 +151,10 @@ Con lo anterior se puede observar que existen preferencias por ciertos generos d
 
 Como tendencia general a lo largo de los años para todas las regiones los juegos más preferidos son: Deportes, Shooters, Juegos de rol, Miscelaneos y Acción.
 
+### Modelo
+
+Como se observo para cada una de las regiones asi como para los años, el generó provó ser una característica significativa, ya que marca las tendecias de las ventas,pero, todavía falta comprobarlo estadísticamente.
+
 Ahora seleccionaremos uno de los generos que se consideraron predominantes en todo el conjunto de datos para realizar un análisis de ventas, la intención es ajustar un modelo lineal que describa el comportamiento de ventas para cada genero.
 
 Nuestra hipótesis es la siguiente:
@@ -177,7 +181,7 @@ vgsales_genre %>%
 vgsales_genre <- vgsales_genre %>% 
   mutate(Year = as.numeric(Year))
 
-lm(total_sales ~ Genre+ poly(Year,4) ,data = vgsales_genre) # El tercer y cuarto termino del polinomio no es estadisticamente significativo
+lm(total_sales ~ Genre+ poly(Year,4) ,data = vgsales_genre) # El tercer y cuarto termino del polinomio no es estadisticamente significativo, se eliminan
 
 model <- lm(total_sales ~ Genre+ poly(Year,2) ,data = vgsales_genre)
 
