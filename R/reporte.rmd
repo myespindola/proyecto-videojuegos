@@ -109,7 +109,7 @@ heatmaply_cor(
 ```
 
 ```{r}
-ventasGenero(x)<-
+
 reAccion<-juegos%>%
   filter(Genre=='Action') %>%
   filter(Year>1999)  %>%
@@ -143,10 +143,6 @@ predict(poly_reg, data.frame(Year = 18,
 
 
 ```
-```{r}
-m1 <- lm(reAccion$totalSales~reAccion$Year)
-summary(m1)
-plot(reAccion$Year, reAccion$totalSales, xlab = "Año", 
-      ylab = "ventas", pch = 16)
-abline(lsfit(reAccion$totalSales, reAccion$Year)) 
-```
+
+
+
